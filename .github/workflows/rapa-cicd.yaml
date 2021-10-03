@@ -51,14 +51,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/java:latest  
-      - id: get-credentials
-        uses: google-github-actions/get-gke-credentials@main
-        with:
-          cluster_name: cluster-1
-          location: us-central1-c
-          credentials: ${{ secrets.gcp_credentials }}
-      - id: get-pods
-        run: kubectl get pods
 
       - name: get-credentials
         uses: google-github-actions/get-gke-credentials@main
