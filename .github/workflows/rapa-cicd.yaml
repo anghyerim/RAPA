@@ -47,7 +47,7 @@ jobs:
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           dockerfile: ./Dockerfile
-          image: gcr.io/[your-project]/[image-name]
+          image: gcr.io/${{ secrets.GCP_PROJECT_ID }}/hyerim1003:latest
           service_account_key: ${{ secrets.GCP_SA_KEY }}
       
       - name: Deploy-Restart
